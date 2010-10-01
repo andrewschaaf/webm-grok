@@ -1,0 +1,34 @@
+
+message FrameMessage {
+    
+    enum ReconstructionFilter {
+        RECONSTRUCTION_NONE = 0;
+        RECONSTRUCTION_BICUBIC = 1;
+        RECONSTRUCTION_BILINEAR = 2;
+    }
+    
+    enum LoopFilter {
+        LOOP_NONE = 0;
+        LOOP_NORMAL = 1;
+        LOOP_SIMPLE = 2;
+    }
+    
+    enum Upscaling {
+        UPSCALING_NONE = 0;
+        UPSCALING_5_4 = 1;
+        UPSCALING_5_3 = 2;
+        UPSCALING_2 = 3;
+    }
+    
+    optional bool isKeyframe = 1;
+    optional ReconstructionFilter reconstructionFilter = 2;
+    optional LoopFilter loopFilter = 3;
+    optional bool showFrame = 4;
+    optional uint32 sizeOfFirstDataPartition = 5;
+    
+    optional uint32 width = 6;
+    optional Upscaling horizScale = 7;
+    optional uint32 height = 8;
+    optional Upscaling vertScale = 9;
+}
+
